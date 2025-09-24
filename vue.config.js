@@ -1,5 +1,6 @@
 // Moved to frontend/
 module.exports = {
+  publicPath: '/', // Set for local development
   devServer: {
     proxy: {
       '/api': {
