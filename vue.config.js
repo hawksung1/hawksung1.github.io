@@ -17,12 +17,7 @@ module.exports = defineConfig({
       '*.json'
     ],
     open: false,
-    port: 8080,
-    watchOptions: {
-      poll: 1000, // 1초마다 파일 변경 확인 (WSL 환경에서 유용)
-      aggregateTimeout: 300, // 파일 변경 후 300ms 대기
-      ignored: /node_modules/
-    }
+    port: 8080
   },
   chainWebpack: config => {
     // 파일 변경 감지 개선

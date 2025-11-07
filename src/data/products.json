@@ -71,6 +71,882 @@
       "ingredients": [
         { "type": "crop", "name": "벼", "count": 50 }
       ]
+    },
+    {
+      "id": "chamgireum",
+      "name": "참기름",
+      "building": "기름집",
+      "ingredients": [
+        { "type": "crop", "name": "참깨", "count": 30 }
+      ]
+    },
+    {
+      "id": "sikyongyu",
+      "name": "식용유",
+      "building": "기름집",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 30 }
+      ]
+    },
+    {
+      "id": "deulgireum",
+      "name": "들기름",
+      "building": "기름집",
+      "ingredients": [
+        { "type": "crop", "name": "들깨", "count": 30 }
+      ]
+    },
+    {
+      "id": "seoltang",
+      "name": "설탕",
+      "building": "제당소",
+      "ingredients": [
+        { "type": "crop", "name": "사탕수수", "count": 30 }
+      ]
+    },
+    {
+      "id": "mullyeot",
+      "name": "물엿",
+      "building": "제당소",
+      "ingredients": [
+        { "type": "product", "name": "엿기름", "count": 1 }
+      ]
+    },
+    {
+      "id": "gochutgaru",
+      "name": "고춧가루",
+      "building": "방앗간",
+      "ingredients": [
+        { "type": "crop", "name": "고추", "count": 30 }
+      ]
+    },
+    {
+      "id": "milgaru",
+      "name": "밀가루",
+      "building": "방앗간",
+      "ingredients": [
+        { "type": "crop", "name": "밀", "count": 30 }
+      ]
+    },
+    {
+      "id": "ssalgaru",
+      "name": "쌀가루",
+      "building": "방앗간",
+      "ingredients": [
+        { "type": "product", "name": "백미", "count": 1 }
+      ]
+    },
+    {
+      "id": "chapssalgaru",
+      "name": "찹쌀가루",
+      "building": "방앗간",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀", "count": 1 }
+      ]
+    },
+    {
+      "id": "jeonbun",
+      "name": "전분",
+      "building": "방앗간",
+      "ingredients": [
+        { "type": "crop", "name": "옥수수", "count": 30 }
+      ]
+    },
+    {
+      "id": "konggaru",
+      "name": "콩가루",
+      "building": "방앗간",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 30 }
+      ]
+    },
+    {
+      "id": "memilgaru",
+      "name": "메밀가루",
+      "building": "방앗간",
+      "ingredients": [
+        { "type": "crop", "name": "메밀", "count": 30 }
+      ]
+    },
+    {
+      "id": "dubu",
+      "name": "두부",
+      "building": "두부집",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 20 },
+        { "type": "crop", "name": "응고제", "count": 5 }
+      ]
+    },
+    {
+      "id": "yeondubu",
+      "name": "연두부",
+      "building": "두부집",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 30 },
+        { "type": "crop", "name": "응고제", "count": 4 }
+      ]
+    },
+    {
+      "id": "sundubu",
+      "name": "순두부",
+      "building": "두부집",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 40 },
+        { "type": "crop", "name": "응고제", "count": 3 }
+      ]
+    },
+    {
+      "id": "yubu",
+      "name": "유부",
+      "building": "두부집",
+      "ingredients": [
+        { "type": "product", "name": "두부", "count": 1 },
+        { "type": "product", "name": "식용유", "count": 1 }
+      ]
+    },
+    {
+      "id": "memilmuk",
+      "name": "메밀묵",
+      "building": "두부집",
+      "ingredients": [
+        { "type": "product", "name": "메밀가루", "count": 1 },
+        { "type": "product", "name": "참기름", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "garaetteok",
+      "name": "가래떡",
+      "building": "떡집",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "sirutteok",
+      "name": "시루떡",
+      "building": "떡집",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀가루", "count": 1 },
+        { "type": "crop", "name": "팥", "count": 30 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "songpyeon",
+      "name": "송편",
+      "building": "떡집",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀가루", "count": 1 },
+        { "type": "crop", "name": "참깨", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 1 }
+      ]
+    },
+    {
+      "id": "baekseolgi",
+      "name": "백설기",
+      "building": "떡집",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀가루", "count": 1 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "ssukgaetteok",
+      "name": "쑥개떡",
+      "building": "떡집",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀가루", "count": 1 },
+        { "type": "crop", "name": "개똥쑥", "count": 30 },
+        { "type": "product", "name": "참기름", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "iljeolmi",
+      "name": "일절미",
+      "building": "떡집",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀가루", "count": 1 },
+        { "type": "product", "name": "콩가루", "count": 1 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "ssukpattteok",
+      "name": "쑥팥떡",
+      "building": "떡집",
+      "ingredients": [
+        { "type": "product", "name": "쑥개떡", "count": 1 },
+        { "type": "crop", "name": "팥", "count": 30 }
+      ]
+    },
+    {
+      "id": "hobakgoji",
+      "name": "호박고지",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "crop", "name": "천둥호박", "count": 30 }
+      ]
+    },
+    {
+      "id": "gogumamallaengi",
+      "name": "고구마말랭이",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "crop", "name": "고구마", "count": 30 }
+      ]
+    },
+    {
+      "id": "mumallaengi",
+      "name": "무말랭이",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "crop", "name": "무", "count": 30 }
+      ]
+    },
+    {
+      "id": "geontomato",
+      "name": "건토마토",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "crop", "name": "토마토", "count": 30 }
+      ]
+    },
+    {
+      "id": "mallinpineapple",
+      "name": "말린파인애플",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "crop", "name": "파인애플", "count": 30 }
+      ]
+    },
+    {
+      "id": "geonpodo",
+      "name": "건포도",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "crop", "name": "포도", "count": 30 }
+      ]
+    },
+    {
+      "id": "geonjomango",
+      "name": "건조망고",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "crop", "name": "애플망고", "count": 30 }
+      ]
+    },
+    {
+      "id": "nurungji",
+      "name": "누룽지",
+      "building": "건조장",
+      "ingredients": [
+        { "type": "product", "name": "백미", "count": 1 }
+      ]
+    },
+    {
+      "id": "hobakjeup",
+      "name": "호박즙",
+      "building": "즙제조장",
+      "ingredients": [
+        { "type": "crop", "name": "천둥호박", "count": 30 }
+      ]
+    },
+    {
+      "id": "gaettongssukjeup",
+      "name": "개똥쑥즙",
+      "building": "즙제조장",
+      "ingredients": [
+        { "type": "crop", "name": "개똥쑥", "count": 30 }
+      ]
+    },
+    {
+      "id": "yangbaechujeup",
+      "name": "양배추즙",
+      "building": "즙제조장",
+      "ingredients": [
+        { "type": "crop", "name": "양배추", "count": 30 },
+        { "type": "crop", "name": "당근", "count": 30 }
+      ]
+    },
+    {
+      "id": "baedorajijeup",
+      "name": "배도라지즙",
+      "building": "즙제조장",
+      "ingredients": [
+        { "type": "crop", "name": "배", "count": 30 },
+        { "type": "crop", "name": "도라지", "count": 30 }
+      ]
+    },
+    {
+      "id": "geongangjeup",
+      "name": "건강즙",
+      "building": "즙제조장",
+      "ingredients": [
+        { "type": "crop", "name": "여주", "count": 30 },
+        { "type": "crop", "name": "삼채", "count": 30 }
+      ]
+    },
+    {
+      "id": "yachaejeup",
+      "name": "야채즙",
+      "building": "즙제조장",
+      "ingredients": [
+        { "type": "product", "name": "양배추즙", "count": 1 },
+        { "type": "crop", "name": "브로콜리", "count": 30 },
+        { "type": "crop", "name": "콜라비", "count": 30 }
+      ]
+    },
+    {
+      "id": "beoseotjeup",
+      "name": "버섯즙",
+      "building": "즙제조장",
+      "ingredients": [
+        { "type": "crop", "name": "가시오가피", "count": 30 },
+        { "type": "crop", "name": "상황버섯", "count": 30 },
+        { "type": "crop", "name": "차가버섯", "count": 30 },
+        { "type": "crop", "name": "노루궁뎅이버섯", "count": 30 }
+      ]
+    },
+    {
+      "id": "sikcho",
+      "name": "식초",
+      "building": "소스제조장",
+      "ingredients": [
+        { "type": "crop", "name": "사과", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "crop", "name": "이스트", "count": 5 }
+      ]
+    },
+    {
+      "id": "mayonnaise",
+      "name": "마요네즈",
+      "building": "소스제조장",
+      "ingredients": [
+        { "type": "product", "name": "식초", "count": 1 },
+        { "type": "crop", "name": "달걀", "count": 5 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "gyeojasauce",
+      "name": "겨자소스",
+      "building": "소스제조장",
+      "ingredients": [
+        { "type": "crop", "name": "겨자", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "product", "name": "전분", "count": 1 },
+        { "type": "product", "name": "식초", "count": 1 }
+      ]
+    },
+    {
+      "id": "ketchup",
+      "name": "케첩",
+      "building": "소스제조장",
+      "ingredients": [
+        { "type": "crop", "name": "토마토", "count": 30 },
+        { "type": "crop", "name": "양파", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "product", "name": "식초", "count": 1 }
+      ]
+    },
+    {
+      "id": "baechukimchi",
+      "name": "배추김치",
+      "building": "김치전문점",
+      "ingredients": [
+        { "type": "crop", "name": "배추", "count": 30 },
+        { "type": "product", "name": "고춧가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "dongchimi",
+      "name": "동치미",
+      "building": "김치전문점",
+      "ingredients": [
+        { "type": "crop", "name": "무", "count": 30 },
+        { "type": "crop", "name": "배", "count": 30 },
+        { "type": "crop", "name": "생강", "count": 30 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "kkakdugi",
+      "name": "깍두기",
+      "building": "김치전문점",
+      "ingredients": [
+        { "type": "crop", "name": "무", "count": 30 },
+        { "type": "crop", "name": "미나리", "count": 30 },
+        { "type": "product", "name": "고춧가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "oisobagi",
+      "name": "오이소박이",
+      "building": "김치전문점",
+      "ingredients": [
+        { "type": "crop", "name": "오이", "count": 30 },
+        { "type": "crop", "name": "양파", "count": 30 },
+        { "type": "product", "name": "고춧가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "pakimchi",
+      "name": "파김치",
+      "building": "김치전문점",
+      "ingredients": [
+        { "type": "crop", "name": "파", "count": 30 },
+        { "type": "product", "name": "고춧가루", "count": 1 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "mumallaengimuchim",
+      "name": "무말랭이무침",
+      "building": "김치전문점",
+      "ingredients": [
+        { "type": "product", "name": "무말랭이", "count": 1 },
+        { "type": "product", "name": "고춧가루", "count": 1 },
+        { "type": "product", "name": "간장", "count": 1 },
+        { "type": "product", "name": "참기름", "count": 1 }
+      ]
+    },
+    {
+      "id": "hanji",
+      "name": "한지",
+      "building": "인쇄소",
+      "ingredients": [
+        { "type": "crop", "name": "닥나무", "count": 30 }
+      ]
+    },
+    {
+      "id": "mosi",
+      "name": "모시",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "crop", "name": "모시풀", "count": 30 }
+      ]
+    },
+    {
+      "id": "som",
+      "name": "솜",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "crop", "name": "목화", "count": 30 }
+      ]
+    },
+    {
+      "id": "nuegochi",
+      "name": "누에고치",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "crop", "name": "뽕잎", "count": 5 }
+      ]
+    },
+    {
+      "id": "myeongjusil",
+      "name": "명주실",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "product", "name": "누에고치", "count": 2 }
+      ]
+    },
+    {
+      "id": "sil",
+      "name": "실",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "product", "name": "솜", "count": 1 }
+      ]
+    },
+    {
+      "id": "myeonjigmul",
+      "name": "면직물",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "product", "name": "실", "count": 1 }
+      ]
+    },
+    {
+      "id": "bidan",
+      "name": "비단",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "product", "name": "명주실", "count": 1 }
+      ]
+    },
+    {
+      "id": "batjul",
+      "name": "밧줄",
+      "building": "방직소",
+      "ingredients": [
+        { "type": "product", "name": "면직물", "count": 1 }
+      ]
+    },
+    {
+      "id": "hanbok",
+      "name": "한복",
+      "building": "한복점",
+      "ingredients": [
+        { "type": "product", "name": "비단", "count": 1 }
+      ]
+    },
+    {
+      "id": "syeocheu",
+      "name": "셔츠",
+      "building": "양복점",
+      "ingredients": [
+        { "type": "product", "name": "면직물", "count": 3 }
+      ]
+    },
+    {
+      "id": "milguksumyeon",
+      "name": "밀국수면",
+      "building": "제면소",
+      "ingredients": [
+        { "type": "product", "name": "밀가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "ssalguksumyeon",
+      "name": "쌀국수면",
+      "building": "제면소",
+      "ingredients": [
+        { "type": "product", "name": "쌀가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "memilmyeon",
+      "name": "메밀면",
+      "building": "제면소",
+      "ingredients": [
+        { "type": "product", "name": "메밀가루", "count": 1 },
+        { "type": "product", "name": "밀가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "ramyeonmyeon",
+      "name": "라면면",
+      "building": "제면소",
+      "ingredients": [
+        { "type": "product", "name": "밀가루", "count": 1 },
+        { "type": "product", "name": "식용유", "count": 2 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "udongmyeon",
+      "name": "우동면",
+      "building": "제면소",
+      "ingredients": [
+        { "type": "product", "name": "밀가루", "count": 1 },
+        { "type": "product", "name": "식초", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "oipikel",
+      "name": "오이피클",
+      "building": "절임장",
+      "ingredients": [
+        { "type": "crop", "name": "오이", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "product", "name": "식초", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "dubupikel",
+      "name": "두부피클",
+      "building": "절임장",
+      "ingredients": [
+        { "type": "product", "name": "두부", "count": 2 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "product", "name": "식초", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "deodeokjangajji",
+      "name": "더덕장아찌",
+      "building": "절임장",
+      "ingredients": [
+        { "type": "crop", "name": "더덕", "count": 30 },
+        { "type": "product", "name": "고추장", "count": 1 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "product", "name": "참기름", "count": 1 }
+      ]
+    },
+    {
+      "id": "chamoejangajji",
+      "name": "참외장아찌",
+      "building": "절임장",
+      "ingredients": [
+        { "type": "crop", "name": "참외", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "product", "name": "간장", "count": 1 },
+        { "type": "product", "name": "식초", "count": 1 }
+      ]
+    },
+    {
+      "id": "kollabissammu",
+      "name": "콜라비쌈무",
+      "building": "절임장",
+      "ingredients": [
+        { "type": "crop", "name": "콜라비", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 1 },
+        { "type": "product", "name": "식초", "count": 1 },
+        { "type": "product", "name": "겨자소스", "count": 1 }
+      ]
+    },
+    {
+      "id": "jangmikkotcha",
+      "name": "장미꽃차",
+      "building": "전통찻집",
+      "ingredients": [
+        { "type": "crop", "name": "장미", "count": 30 }
+      ]
+    },
+    {
+      "id": "insamcha",
+      "name": "인삼차",
+      "building": "전통찻집",
+      "ingredients": [
+        { "type": "crop", "name": "인삼", "count": 30 },
+        { "type": "crop", "name": "생강", "count": 30 }
+      ]
+    },
+    {
+      "id": "heobeucha",
+      "name": "허브차",
+      "building": "전통찻집",
+      "ingredients": [
+        { "type": "crop", "name": "로즈마리", "count": 30 },
+        { "type": "crop", "name": "캐모마일", "count": 30 },
+        { "type": "crop", "name": "페퍼민트", "count": 30 }
+      ]
+    },
+    {
+      "id": "sagwajam",
+      "name": "사과잼",
+      "building": "잼제조장",
+      "ingredients": [
+        { "type": "crop", "name": "사과", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "ttalgijam",
+      "name": "딸기잼",
+      "building": "잼제조장",
+      "ingredients": [
+        { "type": "crop", "name": "딸기", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "gamgyuljam",
+      "name": "감귤잼",
+      "building": "잼제조장",
+      "ingredients": [
+        { "type": "crop", "name": "감귤", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "ttangkongjam",
+      "name": "땅콩잼",
+      "building": "잼제조장",
+      "ingredients": [
+        { "type": "crop", "name": "땅콩", "count": 30 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "papeurikajam",
+      "name": "파프리카잼",
+      "building": "잼제조장",
+      "ingredients": [
+        { "type": "crop", "name": "파프리카", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "boksungajam",
+      "name": "복숭아잼",
+      "building": "잼제조장",
+      "ingredients": [
+        { "type": "crop", "name": "복숭아", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "somsatang",
+      "name": "솜사탕",
+      "building": "단구슬집",
+      "ingredients": [
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "nurungjisatang",
+      "name": "누룽지사탕",
+      "building": "단구슬집",
+      "ingredients": [
+        { "type": "product", "name": "누룽지", "count": 2 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "bakhasatang",
+      "name": "박하사탕",
+      "building": "단구슬집",
+      "ingredients": [
+        { "type": "crop", "name": "박하", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "keopisatang",
+      "name": "커피사탕",
+      "building": "단구슬집",
+      "ingredients": [
+        { "type": "crop", "name": "커피", "count": 30 },
+        { "type": "product", "name": "설탕", "count": 2 }
+      ]
+    },
+    {
+      "id": "hobakyeot",
+      "name": "호박엿",
+      "building": "단구슬집",
+      "ingredients": [
+        { "type": "crop", "name": "천둥호박", "count": 30 },
+        { "type": "product", "name": "들기름", "count": 2 }
+      ]
+    },
+    {
+      "id": "ssalyeot",
+      "name": "쌀엿",
+      "building": "단구슬집",
+      "ingredients": [
+        { "type": "product", "name": "백미", "count": 1 },
+        { "type": "product", "name": "콩가루", "count": 2 },
+        { "type": "product", "name": "엿기름", "count": 2 }
+      ]
+    },
+    {
+      "id": "ttangkongyeot",
+      "name": "땅콩엿",
+      "building": "단구슬집",
+      "ingredients": [
+        { "type": "crop", "name": "땅콩", "count": 30 },
+        { "type": "crop", "name": "참깨", "count": 30 },
+        { "type": "product", "name": "엿기름", "count": 2 }
+      ]
+    },
+    {
+      "id": "duyu",
+      "name": "두유",
+      "building": "음료점",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 30 },
+        { "type": "crop", "name": "우유", "count": 5 }
+      ]
+    },
+    {
+      "id": "insamjuseu",
+      "name": "인삼주스",
+      "building": "음료점",
+      "ingredients": [
+        { "type": "crop", "name": "인삼", "count": 30 },
+        { "type": "product", "name": "두유", "count": 2 }
+      ]
+    },
+    {
+      "id": "geongangjuseu",
+      "name": "건강주스",
+      "building": "음료점",
+      "ingredients": [
+        { "type": "crop", "name": "토마토", "count": 30 },
+        { "type": "crop", "name": "알로에", "count": 30 },
+        { "type": "crop", "name": "수박", "count": 30 },
+        { "type": "crop", "name": "브로콜리", "count": 30 }
+      ]
+    },
+    {
+      "id": "misutgaru",
+      "name": "미숫가루",
+      "building": "음료점",
+      "ingredients": [
+        { "type": "product", "name": "쌀가루", "count": 1 },
+        { "type": "product", "name": "콩가루", "count": 2 },
+        { "type": "product", "name": "두유", "count": 2 },
+        { "type": "product", "name": "설탕", "count": 1 }
+      ]
+    },
+    {
+      "id": "sikhye",
+      "name": "식혜",
+      "building": "음료점",
+      "ingredients": [
+        { "type": "product", "name": "백미", "count": 1 },
+        { "type": "product", "name": "엿기름", "count": 2 },
+        { "type": "product", "name": "물엿", "count": 2 },
+        { "type": "crop", "name": "생강", "count": 30 }
+      ]
+    },
+    {
+      "id": "janchiguksu",
+      "name": "잔치국수",
+      "building": "국수전문점",
+      "ingredients": [
+        { "type": "product", "name": "밀국수면", "count": 1 },
+        { "type": "product", "name": "간장", "count": 1 },
+        { "type": "crop", "name": "애호박", "count": 30 },
+        { "type": "crop", "name": "당근", "count": 30 }
+      ]
+    },
+    {
+      "id": "doenjang",
+      "name": "된장",
+      "building": "장집",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 30 },
+        { "type": "crop", "name": "소금", "count": 5 },
+        { "type": "crop", "name": "발효액", "count": 5 }
+      ]
+    },
+    {
+      "id": "ganjang",
+      "name": "간장",
+      "building": "장집",
+      "ingredients": [
+        { "type": "crop", "name": "대두", "count": 30 },
+        { "type": "product", "name": "밀가루", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
+    },
+    {
+      "id": "gochujang",
+      "name": "고추장",
+      "building": "장집",
+      "ingredients": [
+        { "type": "product", "name": "찹쌀가루", "count": 1 },
+        { "type": "product", "name": "고춧가루", "count": 1 },
+        { "type": "product", "name": "엿기름", "count": 1 },
+        { "type": "crop", "name": "소금", "count": 5 }
+      ]
     }
   ]
 }

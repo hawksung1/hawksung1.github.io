@@ -156,8 +156,14 @@ export default {
   },
   methods: {
     showCropDetails(cropName) {
-      const products = getAllProducts()
-      const related = findProductsUsingCrop(products, cropName)
+      // 계산 결과에 포함된 가공품만 필터링
+      const allProducts = getAllProducts()
+      const resultProducts = this.result.dependencyChain || []
+      const resultProductNames = new Set(resultProducts.map(p => p.name))
+      
+      // 계산 결과에 포함된 가공품 중에서만 찾기
+      const related = findProductsUsingCrop(allProducts, cropName)
+        .filter(product => resultProductNames.has(product.name))
       
       this.modalType = 'crop'
       this.selectedItem = cropName

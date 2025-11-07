@@ -15,17 +15,7 @@
       <!-- 가공품 목록 탭 -->
       <div v-if="currentTab === 'list'" class="tab-content">
         <ProductList 
-          @edit-product="handleEditProduct"
           @product-deleted="handleProductDeleted"
-        />
-      </div>
-      
-      <!-- 가공품 관리 탭 -->
-      <div v-if="currentTab === 'add'" class="tab-content">
-        <AddProductForm 
-          :editingProduct="editingProduct"
-          @product-added="handleProductAdded"
-          @edit-complete="handleEditComplete"
         />
       </div>
       
@@ -40,7 +30,6 @@
 <script>
 import SearchForm from './components/SearchForm.vue'
 import ResultDisplay from './components/ResultDisplay.vue'
-import AddProductForm from './components/AddProductForm.vue'
 import ProductList from './components/ProductList.vue'
 import Navigation from './components/Navigation.vue'
 import DataManagement from './components/DataManagement.vue'
@@ -51,7 +40,6 @@ export default {
   components: {
     SearchForm,
     ResultDisplay,
-    AddProductForm,
     ProductList,
     Navigation,
     DataManagement
@@ -59,16 +47,41 @@ export default {
   data() {
     return {
       currentTab: 'search',
-      result: null,
-      editingProduct: null
+      result: null
     }
   },
   methods: {
     switchTab(tabId) {
       this.currentTab = tabId
-      // 탭 전환 시 편집 중인 제품 초기화
-      if (tabId !== 'add') {
-        this.editingProduct = null
+    },
+    handleKeyboardShortcuts(event) {
+      // 입력 필드에 포커스가 있을 때는 숫자 키 무시 (입력 방해 방지)
+      const activeElement = document.activeElement
+      const isInputFocused = activeElement && (
+        activeElement.tagName === 'INPUT' || 
+        activeElement.tagName === 'TEXTAREA' ||
+        activeElement.isContentEditable
+      )
+      
+      // Ctrl/Cmd + 숫자 키로 탭 이동
+      if ((event.ctrlKey || event.metaKey) && event.key >= '1' && event.key <= '3') {
+        event.preventDefault()
+        const tabIndex = parseInt(event.key) - 1
+        const tabs = ['search', 'list', 'data']
+        if (tabs[tabIndex]) {
+          this.switchTab(tabs[tabIndex])
+        }
+        return
+      }
+      
+      // 입력 필드에 포커스가 없을 때만 숫자 키로 탭 이동
+      if (!isInputFocused && event.key >= '1' && event.key <= '3' && !event.ctrlKey && !event.metaKey && !event.altKey && !event.shiftKey) {
+        event.preventDefault()
+        const tabIndex = parseInt(event.key) - 1
+        const tabs = ['search', 'list', 'data']
+        if (tabs[tabIndex]) {
+          this.switchTab(tabs[tabIndex])
+        }
       }
     },
     handleSearch(productList) {
@@ -100,13 +113,6 @@ export default {
         }
       }
     },
-    handleEditProduct(product) {
-      this.editingProduct = product
-      this.currentTab = 'add'
-    },
-    handleEditComplete() {
-      this.editingProduct = null
-    },
     handleProductDeleted() {
       // 가공품 삭제 시 결과 재계산
       this.handleProductAdded()
@@ -115,6 +121,12 @@ export default {
       // 데이터 변경 시 결과 재계산
       this.handleProductAdded()
     }
+  },
+  mounted() {
+    document.addEventListener('keydown', this.handleKeyboardShortcuts)
+  },
+  beforeUnmount() {
+    document.removeEventListener('keydown', this.handleKeyboardShortcuts)
   }
 }
 </script>

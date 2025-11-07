@@ -4,6 +4,111 @@
       "id": "jeongmiso",
       "name": "정미소",
       "description": "벼를 가공하여 쌀과 부산물을 만드는 건물"
+    },
+    {
+      "id": "gireumjip",
+      "name": "기름집",
+      "description": "작물을 가공하여 기름을 만드는 건물"
+    },
+    {
+      "id": "jedangso",
+      "name": "제당소",
+      "description": "사탕수수와 엿기름을 가공하여 설탕과 물엿을 만드는 건물"
+    },
+    {
+      "id": "bangatgan",
+      "name": "방앗간",
+      "description": "작물과 가공품을 갈아서 가루를 만드는 건물"
+    },
+    {
+      "id": "dubujip",
+      "name": "두부집",
+      "description": "대두와 응고제를 사용하여 두부를 만들고, 두부와 기름으로 유부와 메밀묵을 만드는 건물"
+    },
+    {
+      "id": "tteokjip",
+      "name": "떡집",
+      "description": "찹쌀가루와 다양한 재료를 사용하여 여러 종류의 떡을 만드는 건물"
+    },
+    {
+      "id": "geonjojang",
+      "name": "건조장",
+      "description": "작물과 가공품을 건조하여 보관하기 좋은 형태로 만드는 건물"
+    },
+    {
+      "id": "jeupjejojang",
+      "name": "즙제조장",
+      "description": "작물과 가공품을 갈아서 즙을 만드는 건물"
+    },
+    {
+      "id": "sosujejojang",
+      "name": "소스제조장",
+      "description": "작물과 가공품을 사용하여 다양한 소스를 만드는 건물"
+    },
+    {
+      "id": "kimchijeonmunjeom",
+      "name": "김치전문점",
+      "description": "배추, 무 등 다양한 채소와 고춧가루를 사용하여 김치를 만드는 건물"
+    },
+    {
+      "id": "inswaso",
+      "name": "인쇄소",
+      "description": "닥나무를 가공하여 한지를 만드는 건물"
+    },
+    {
+      "id": "bangjikso",
+      "name": "방직소",
+      "description": "모시풀, 목화, 뽕잎 등을 가공하여 실과 직물을 만드는 건물"
+    },
+    {
+      "id": "hanbokjeom",
+      "name": "한복점",
+      "description": "비단을 사용하여 한복을 만드는 건물"
+    },
+    {
+      "id": "yangbokjeom",
+      "name": "양복점",
+      "description": "면직물을 사용하여 양복을 만드는 건물"
+    },
+    {
+      "id": "jemyeonso",
+      "name": "제면소",
+      "description": "밀가루, 쌀가루 등을 사용하여 국수를 만드는 건물"
+    },
+    {
+      "id": "jeorimjang",
+      "name": "절임장",
+      "description": "채소와 가공품을 사용하여 절임과 장아찌를 만드는 건물"
+    },
+    {
+      "id": "jeontongchatjip",
+      "name": "전통찻집",
+      "description": "장미, 인삼, 허브 등 다양한 재료를 사용하여 차를 만드는 건물"
+    },
+    {
+      "id": "jemjejojang",
+      "name": "잼제조장",
+      "description": "과일과 설탕을 사용하여 잼을 만드는 건물"
+    },
+    {
+      "id": "dangusuljip",
+      "name": "단구슬집",
+      "description": "설탕과 다양한 재료를 사용하여 사탕과 엿을 만드는 건물"
+    },
+    {
+      "id": "eumryojeom",
+      "name": "음료점",
+      "description": "대두, 과일 등을 사용하여 다양한 음료를 만드는 건물"
+    },
+    {
+      "id": "guksujeonmunjeom",
+      "name": "국수전문점",
+      "description": "국수면과 다양한 재료를 사용하여 국수를 만드는 건물"
+    },
+    {
+      "id": "jangjip",
+      "name": "장집",
+      "description": "대두와 다양한 재료를 사용하여 된장, 간장, 고추장을 만드는 건물"
     }
   ]
 }

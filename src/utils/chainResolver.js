@@ -81,21 +81,46 @@ export function groupByBuilding(dependencyChain) {
 }
 
 /**
- * 특정 작물이 필요한 모든 가공품을 찾습니다 (역추적).
+ * 특정 작물이 필요한 모든 가공품을 찾습니다 (재귀적 역추적).
+ * 직접적으로 작물을 사용하는 가공품과, 그 가공품을 사용하는 다른 가공품들도 포함합니다.
  * @param {Array} products - 가공품 배열
  * @param {string} cropName - 작물 이름
- * @returns {Array} 해당 작물을 사용하는 가공품 배열
+ * @param {Set} visited - 방문한 가공품 추적 (순환 참조 방지)
+ * @returns {Array} 해당 작물을 사용하는 가공품 배열 (직접 및 간접)
  */
-export function findProductsUsingCrop(products, cropName) {
+export function findProductsUsingCrop(products, cropName, visited = new Set()) {
   const result = []
   
-  products.forEach(product => {
-    const usesCrop = product.ingredients.some(
+  // 1단계: 직접적으로 작물을 사용하는 가공품 찾기
+  const directProducts = products.filter(product => {
+    return product.ingredients.some(
       ing => ing.type === 'crop' && ing.name === cropName
     )
-    if (usesCrop) {
+  })
+  
+  // 직접 사용하는 가공품 추가
+  directProducts.forEach(product => {
+    if (!visited.has(product.name)) {
+      visited.add(product.name)
       result.push(product)
     }
+  })
+  
+  // 2단계: 직접 사용하는 가공품들을 사용하는 다른 가공품들 재귀적으로 찾기
+  const findIndirectProducts = (productName, currentVisited) => {
+    const indirectProducts = findProductsUsingProduct(products, productName, new Set(currentVisited))
+    indirectProducts.forEach(product => {
+      if (!currentVisited.has(product.name)) {
+        currentVisited.add(product.name)
+        result.push(product)
+        // 재귀적으로 더 깊은 레벨의 의존성 찾기
+        findIndirectProducts(product.name, currentVisited)
+      }
+    })
+  }
+  
+  directProducts.forEach(directProduct => {
+    findIndirectProducts(directProduct.name, new Set(visited))
   })
   
   return result
@@ -105,16 +130,23 @@ export function findProductsUsingCrop(products, cropName) {
  * 특정 가공품이 필요한 모든 가공품을 찾습니다 (역추적).
  * @param {Array} products - 가공품 배열
  * @param {string} productName - 가공품 이름
+ * @param {Set} visited - 방문한 가공품 추적 (순환 참조 방지)
  * @returns {Array} 해당 가공품을 사용하는 가공품 배열
  */
-export function findProductsUsingProduct(products, productName) {
+export function findProductsUsingProduct(products, productName, visited = new Set()) {
   const result = []
   
   products.forEach(product => {
+    // 이미 방문한 가공품은 건너뛰기
+    if (visited.has(product.name)) {
+      return
+    }
+    
     const usesProduct = product.ingredients.some(
       ing => ing.type === 'product' && ing.name === productName
     )
     if (usesProduct) {
+      visited.add(product.name)
       result.push(product)
     }
   })
