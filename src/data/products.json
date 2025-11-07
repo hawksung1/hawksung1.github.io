@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "product_a",
+      "name": "A 가공품",
+      "building": "건물1",
+      "ingredients": [
+        { "type": "crop", "name": "오이", "count": 50 },
+        { "type": "crop", "name": "사과", "count": 50 }
+      ]
+    },
+    {
+      "id": "product_b",
+      "name": "B 가공품",
+      "building": "건물2",
+      "ingredients": [
+        { "type": "product", "name": "A 가공품", "count": 1 },
+        { "type": "crop", "name": "사과", "count": 10 }
+      ]
+    },
+    {
+      "id": "product_c",
+      "name": "C 가공품",
+      "building": "건물2",
+      "ingredients": [
+        { "type": "product", "name": "A 가공품", "count": 1 },
+        { "type": "product", "name": "B 가공품", "count": 1 }
+      ]
+    }
+  ]
+}
+
