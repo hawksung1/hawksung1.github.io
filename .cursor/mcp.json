@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"],
+      "cwd": "/mnt/f/git_projects/RealFarm",
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/mnt/f/git_projects/RealFarm/node_modules/.cache/ms-playwright"
+      }
+    },
+    "naver-search": {
+      "command": "npx",
+      "args": ["-y", "@d429/naver-search-mcp-fixed"],
+      "env": {
+        "NAVER_CLIENT_ID": "IIPfxYGJvjsYdkQ06Kct",
+        "NAVER_CLIENT_SECRET": "gT05h0PfKQ"
+      }
+    }
+  }
+}
+

@@ -1,14 +1,9 @@
 {
   "buildings": [
     {
-      "id": "building1",
-      "name": "건물1",
-      "description": "기본 가공 건물"
-    },
-    {
-      "id": "building2",
-      "name": "건물2",
-      "description": "고급 가공 건물"
+      "id": "jeongmiso",
+      "name": "정미소",
+      "description": "벼를 가공하여 쌀과 부산물을 만드는 건물"
     }
   ]
 }

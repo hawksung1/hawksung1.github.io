@@ -12,6 +12,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@vue/cli-service": "^5.0.8",
     "gh-pages": "^6.0.0"
   },
@@ -21,4 +22,3 @@
     "not dead"
   ]
 }
-

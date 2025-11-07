@@ -80,3 +80,55 @@ export function groupByBuilding(dependencyChain) {
   return grouped
 }
 
+/**
+ * 특정 작물이 필요한 모든 가공품을 찾습니다 (역추적).
+ * @param {Array} products - 가공품 배열
+ * @param {string} cropName - 작물 이름
+ * @returns {Array} 해당 작물을 사용하는 가공품 배열
+ */
+export function findProductsUsingCrop(products, cropName) {
+  const result = []
+  
+  products.forEach(product => {
+    const usesCrop = product.ingredients.some(
+      ing => ing.type === 'crop' && ing.name === cropName
+    )
+    if (usesCrop) {
+      result.push(product)
+    }
+  })
+  
+  return result
+}
+
+/**
+ * 특정 가공품이 필요한 모든 가공품을 찾습니다 (역추적).
+ * @param {Array} products - 가공품 배열
+ * @param {string} productName - 가공품 이름
+ * @returns {Array} 해당 가공품을 사용하는 가공품 배열
+ */
+export function findProductsUsingProduct(products, productName) {
+  const result = []
+  
+  products.forEach(product => {
+    const usesProduct = product.ingredients.some(
+      ing => ing.type === 'product' && ing.name === productName
+    )
+    if (usesProduct) {
+      result.push(product)
+    }
+  })
+  
+  return result
+}
+
+/**
+ * 특정 가공품의 재료 정보를 반환합니다.
+ * @param {Array} products - 가공품 배열
+ * @param {string} productName - 가공품 이름
+ * @returns {Object|null} 가공품 정보 또는 null
+ */
+export function getProductIngredients(products, productName) {
+  return findProduct(products, productName)
+}
+

@@ -1,32 +1,76 @@
 {
   "products": [
     {
-      "id": "product_a",
-      "name": "A 가공품",
-      "building": "건물1",
+      "id": "hyeonmi",
+      "name": "현미",
+      "building": "정미소",
       "ingredients": [
-        { "type": "crop", "name": "오이", "count": 50 },
-        { "type": "crop", "name": "사과", "count": 50 }
+        { "type": "crop", "name": "벼", "count": 30 }
       ]
     },
     {
-      "id": "product_b",
-      "name": "B 가공품",
-      "building": "건물2",
+      "id": "baekmi",
+      "name": "백미",
+      "building": "정미소",
       "ingredients": [
-        { "type": "product", "name": "A 가공품", "count": 1 },
-        { "type": "crop", "name": "사과", "count": 10 }
+        { "type": "product", "name": "현미", "count": 1 }
       ]
     },
     {
-      "id": "product_c",
-      "name": "C 가공품",
-      "building": "건물2",
+      "id": "chapssal",
+      "name": "찹쌀",
+      "building": "정미소",
       "ingredients": [
-        { "type": "product", "name": "A 가공품", "count": 1 },
-        { "type": "product", "name": "B 가공품", "count": 1 }
+        { "type": "crop", "name": "찰벼", "count": 30 }
+      ]
+    },
+    {
+      "id": "heukmi",
+      "name": "흑미",
+      "building": "정미소",
+      "ingredients": [
+        { "type": "crop", "name": "흑미벼", "count": 30 }
+      ]
+    },
+    {
+      "id": "yeotgireum",
+      "name": "엿기름",
+      "building": "정미소",
+      "ingredients": [
+        { "type": "crop", "name": "보리", "count": 30 }
+      ]
+    },
+    {
+      "id": "baeami",
+      "name": "배아미",
+      "building": "정미소",
+      "ingredients": [
+        { "type": "crop", "name": "벼", "count": 40 }
+      ]
+    },
+    {
+      "id": "balahyeonmi",
+      "name": "발아현미",
+      "building": "정미소",
+      "ingredients": [
+        { "type": "product", "name": "현미", "count": 1 }
+      ]
+    },
+    {
+      "id": "wanggyeo",
+      "name": "왕겨",
+      "building": "정미소",
+      "ingredients": [
+        { "type": "crop", "name": "벼", "count": 50 }
+      ]
+    },
+    {
+      "id": "byeotjip",
+      "name": "볏짚",
+      "building": "정미소",
+      "ingredients": [
+        { "type": "crop", "name": "벼", "count": 50 }
       ]
     }
   ]
 }
-

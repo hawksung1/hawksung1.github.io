@@ -4,8 +4,35 @@
       <h1>레알팜 게임 핼퍼</h1>
     </header>
     <main>
-      <SearchForm @search="handleSearch" />
-      <ResultDisplay v-if="result" :result="result" />
+      <Navigation :currentTab="currentTab" @tab-change="switchTab" />
+      
+      <!-- 검색 탭 -->
+      <div v-if="currentTab === 'search'" class="tab-content">
+        <SearchForm @search="handleSearch" />
+        <ResultDisplay v-if="result" :result="result" />
+      </div>
+      
+      <!-- 가공품 목록 탭 -->
+      <div v-if="currentTab === 'list'" class="tab-content">
+        <ProductList 
+          @edit-product="handleEditProduct"
+          @product-deleted="handleProductDeleted"
+        />
+      </div>
+      
+      <!-- 가공품 관리 탭 -->
+      <div v-if="currentTab === 'add'" class="tab-content">
+        <AddProductForm 
+          :editingProduct="editingProduct"
+          @product-added="handleProductAdded"
+          @edit-complete="handleEditComplete"
+        />
+      </div>
+      
+      <!-- 데이터 관리 탭 -->
+      <div v-if="currentTab === 'data'" class="tab-content">
+        <DataManagement @data-changed="handleDataChanged" />
+      </div>
     </main>
   </div>
 </template>
@@ -13,24 +40,80 @@
 <script>
 import SearchForm from './components/SearchForm.vue'
 import ResultDisplay from './components/ResultDisplay.vue'
-import { calculateRequirements, formatResult } from './utils/calculator.js'
+import AddProductForm from './components/AddProductForm.vue'
+import ProductList from './components/ProductList.vue'
+import Navigation from './components/Navigation.vue'
+import DataManagement from './components/DataManagement.vue'
+import { calculateRequirements, calculateMultipleRequirements, formatResult } from './utils/calculator.js'
 
 export default {
   name: 'App',
   components: {
     SearchForm,
-    ResultDisplay
+    ResultDisplay,
+    AddProductForm,
+    ProductList,
+    Navigation,
+    DataManagement
   },
   data() {
     return {
-      result: null
+      currentTab: 'search',
+      result: null,
+      editingProduct: null
     }
   },
   methods: {
-    handleSearch(searchData) {
-      const { productName, quantity } = searchData
-      const calculated = calculateRequirements(productName, quantity)
-      this.result = formatResult(calculated)
+    switchTab(tabId) {
+      this.currentTab = tabId
+      // 탭 전환 시 편집 중인 제품 초기화
+      if (tabId !== 'add') {
+        this.editingProduct = null
+      }
+    },
+    handleSearch(productList) {
+      // productList가 배열인지 단일 객체인지 확인
+      if (Array.isArray(productList)) {
+        const calculated = calculateMultipleRequirements(productList)
+        this.result = formatResult(calculated)
+      } else {
+        // 기존 단일 가공품 검색 (하위 호환성)
+        const { productName, quantity } = productList
+        const calculated = calculateRequirements(productName, quantity)
+        this.result = formatResult(calculated)
+      }
+    },
+    handleProductAdded() {
+      // 가공품이 추가되면 결과를 다시 계산 (현재 검색 결과가 있는 경우)
+      if (this.result) {
+        if (this.result.targetProducts && this.result.targetProducts.length > 0) {
+          // 여러 가공품인 경우
+          const calculated = calculateMultipleRequirements(this.result.targetProducts)
+          this.result = formatResult(calculated)
+        } else if (this.result.targetProduct) {
+          // 단일 가공품인 경우
+          const calculated = calculateRequirements(
+            this.result.targetProduct,
+            this.result.targetQuantity
+          )
+          this.result = formatResult(calculated)
+        }
+      }
+    },
+    handleEditProduct(product) {
+      this.editingProduct = product
+      this.currentTab = 'add'
+    },
+    handleEditComplete() {
+      this.editingProduct = null
+    },
+    handleProductDeleted() {
+      // 가공품 삭제 시 결과 재계산
+      this.handleProductAdded()
+    },
+    handleDataChanged() {
+      // 데이터 변경 시 결과 재계산
+      this.handleProductAdded()
     }
   }
 }
