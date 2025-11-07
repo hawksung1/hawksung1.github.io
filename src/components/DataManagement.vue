@@ -25,35 +25,16 @@
         />
         <button @click="triggerFileInput" class="import-btn">데이터 가져오기</button>
       </div>
-      
-      <div class="action-group">
-        <h3>초기화</h3>
-        <p>모든 사용자 추가 가공품 데이터를 삭제합니다. (기본 데이터는 유지됩니다)</p>
-        <button @click="confirmReset" class="reset-btn">데이터 초기화</button>
-      </div>
     </div>
     
     <div v-if="message" :class="['message', messageType]">
       {{ message }}
     </div>
-    
-    <!-- 초기화 확인 모달 -->
-    <div v-if="showResetConfirm" class="modal-overlay" @click="cancelReset">
-      <div class="modal-content" @click.stop>
-        <h3>데이터 초기화</h3>
-        <p>정말로 모든 사용자 추가 가공품 데이터를 삭제하시겠습니까?</p>
-        <p class="warning">이 작업은 되돌릴 수 없습니다!</p>
-        <div class="modal-actions">
-          <button @click="executeReset" class="confirm-btn">초기화</button>
-          <button @click="cancelReset" class="cancel-btn">취소</button>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import { exportProductsToFile, importProductsFromFile, getCustomProducts, saveCustomProducts } from '../utils/dataManager.js'
+import { exportProductsToFile, importProductsFromFile } from '../utils/dataManager.js'
 
 export default {
   name: 'DataManagement',
@@ -61,8 +42,7 @@ export default {
   data() {
     return {
       message: null,
-      messageType: 'info',
-      showResetConfirm: false
+      messageType: 'info'
     }
   },
   methods: {
@@ -99,22 +79,6 @@ export default {
       } else {
         this.showMessage(result.error || '가져오기에 실패했습니다.', 'error')
         event.target.value = ''
-      }
-    },
-    confirmReset() {
-      this.showResetConfirm = true
-    },
-    cancelReset() {
-      this.showResetConfirm = false
-    },
-    executeReset() {
-      const saved = saveCustomProducts([])
-      if (saved) {
-        this.showMessage('데이터가 초기화되었습니다.', 'success')
-        this.$emit('data-changed')
-        this.showResetConfirm = false
-      } else {
-        this.showMessage('초기화에 실패했습니다.', 'error')
       }
     },
     showMessage(text, type = 'info') {
@@ -181,8 +145,7 @@ export default {
 }
 
 .export-btn,
-.import-btn,
-.reset-btn {
+.import-btn {
   width: 100%;
   padding: 12px 20px;
   border: none;
@@ -215,17 +178,6 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }
 
-.reset-btn {
-  background: #dc3545;
-  color: white;
-}
-
-.reset-btn:hover {
-  background: #c82333;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
-}
-
 .message {
   padding: 15px;
   border-radius: 6px;
@@ -249,77 +201,6 @@ export default {
   background: #d1ecf1;
   border: 2px solid #bee5eb;
   color: #0c5460;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.modal-content h3 {
-  margin: 0 0 15px 0;
-  color: #333;
-}
-
-.modal-content p {
-  margin: 0 0 10px 0;
-  color: #666;
-}
-
-.warning {
-  color: #dc3545 !important;
-  font-weight: 600;
-}
-
-.modal-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.confirm-btn,
-.cancel-btn {
-  flex: 1;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.confirm-btn {
-  background: #dc3545;
-  color: white;
-}
-
-.confirm-btn:hover {
-  background: #c82333;
-}
-
-.cancel-btn {
-  background: #6c757d;
-  color: white;
-}
-
-.cancel-btn:hover {
-  background: #5a6268;
 }
 </style>
 

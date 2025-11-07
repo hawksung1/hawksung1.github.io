@@ -1,6 +1,11 @@
 import productsData from '../data/products.json'
+import cropsData from '../data/crops.json'
 
 const STORAGE_KEY = 'realfarm_custom_products'
+const CROPS_STORAGE_KEY = 'realfarm_custom_crops'
+
+// 아이템 목록 (난이도 0)
+const ITEMS = ['응고제', '소금', '발효액', '이스트', '달걀', '우유', '뽕잎']
 
 /**
  * localStorage에서 사용자가 추가한 가공품을 가져옵니다.
@@ -138,6 +143,78 @@ export function getProduct(productId) {
  */
 export function getCustomProductsList() {
   return getCustomProducts()
+}
+
+/**
+ * 작물 데이터를 가져옵니다.
+ */
+export function getAllCrops() {
+  const defaultCrops = cropsData.crops || []
+  const customCrops = getCustomCrops()
+  
+  const cropMap = new Map()
+  
+  // 기본 작물 먼저 추가
+  defaultCrops.forEach(crop => {
+    cropMap.set(crop.name, { ...crop, isCustom: false })
+  })
+  
+  // 사용자 작물 추가 (같은 이름이 있으면 덮어쓰기)
+  customCrops.forEach(crop => {
+    cropMap.set(crop.name, { ...crop, isCustom: true })
+  })
+  
+  return Array.from(cropMap.values())
+}
+
+/**
+ * localStorage에서 사용자가 추가/수정한 작물을 가져옵니다.
+ */
+export function getCustomCrops() {
+  try {
+    const stored = localStorage.getItem(CROPS_STORAGE_KEY)
+    return stored ? JSON.parse(stored) : []
+  } catch (e) {
+    console.error('Failed to load custom crops:', e)
+    return []
+  }
+}
+
+/**
+ * 사용자가 추가/수정한 작물을 localStorage에 저장합니다.
+ */
+export function saveCustomCrops(crops) {
+  try {
+    localStorage.setItem(CROPS_STORAGE_KEY, JSON.stringify(crops))
+    return true
+  } catch (e) {
+    console.error('Failed to save custom crops:', e)
+    return false
+  }
+}
+
+/**
+ * 특정 작물의 난이도를 가져옵니다.
+ */
+export function getCropDifficulty(cropName) {
+  const crops = getAllCrops()
+  const crop = crops.find(c => c.name === cropName)
+  return crop ? (crop.difficulty || 0) : 0
+}
+
+/**
+ * 아이템인지 확인합니다.
+ */
+export function isItem(name) {
+  return ITEMS.includes(name)
+}
+
+/**
+ * 작물인지 확인합니다.
+ */
+export function isCrop(name) {
+  const crops = getAllCrops()
+  return crops.some(c => c.name === name)
 }
 
 /**

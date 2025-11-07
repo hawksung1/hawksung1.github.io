@@ -1,5 +1,5 @@
 import { findProduct, resolveDependencies, groupByBuilding } from './chainResolver.js'
-import { getAllProducts } from './dataManager.js'
+import { getAllProducts, getAllCrops, getCropDifficulty, isItem } from './dataManager.js'
 
 /**
  * 가공품 생산에 필요한 모든 재료를 계산합니다.
@@ -56,21 +56,38 @@ export function calculateMultipleRequirements(productList) {
     }
   })
   
-  // 필요한 작물과 중간 가공품 계산
+  // 필요한 작물, 아이템, 중간 가공품 계산
   const crops = {}
+  const items = {}
   const intermediateProducts = {}
   const buildingGroups = groupByBuilding(uniqueChains)
 
-  // 재귀적으로 재료 계산
+  // 재귀적으로 재료 계산 및 난이도 계산
   function calculateIngredients(product, neededQuantity) {
     if (!product) return
 
     product.ingredients.forEach(ingredient => {
-      if (ingredient.type === 'crop') {
+      // 타입이 명시되지 않은 경우 자동 판단
+      let ingredientType = ingredient.type
+      if (!ingredientType) {
+        if (isItem(ingredient.name)) {
+          ingredientType = 'item'
+        } else if (findProduct(products, ingredient.name)) {
+          ingredientType = 'product'
+        } else {
+          ingredientType = 'crop'
+        }
+      }
+
+      if (ingredientType === 'crop') {
         // 작물인 경우
         const cropName = ingredient.name
         crops[cropName] = (crops[cropName] || 0) + (ingredient.count * neededQuantity)
-      } else if (ingredient.type === 'product') {
+      } else if (ingredientType === 'item') {
+        // 아이템인 경우 (난이도 0)
+        const itemName = ingredient.name
+        items[itemName] = (items[itemName] || 0) + (ingredient.count * neededQuantity)
+      } else if (ingredientType === 'product') {
         // 다른 가공품인 경우
         const ingredientProduct = findProduct(products, ingredient.name)
         if (ingredientProduct) {
@@ -87,6 +104,49 @@ export function calculateMultipleRequirements(productList) {
     })
   }
 
+  // 가공품의 난이도를 계산합니다 (작물 난이도 합산)
+  function calculateProductDifficulty(product) {
+    if (!product) return 0
+    
+    let totalDifficulty = 0
+    const visited = new Set()
+    
+    function calculateRecursive(prod) {
+      if (!prod || visited.has(prod.name)) return 0
+      visited.add(prod.name)
+      
+      let difficulty = 0
+      prod.ingredients.forEach(ingredient => {
+        let ingredientType = ingredient.type
+        if (!ingredientType) {
+          if (isItem(ingredient.name)) {
+            ingredientType = 'item'
+          } else if (findProduct(products, ingredient.name)) {
+            ingredientType = 'product'
+          } else {
+            ingredientType = 'crop'
+          }
+        }
+
+        if (ingredientType === 'crop') {
+          // 작물 난이도 추가
+          difficulty += getCropDifficulty(ingredient.name) * ingredient.count
+        } else if (ingredientType === 'product') {
+          // 가공품인 경우 재귀적으로 난이도 계산
+          const ingredientProduct = findProduct(products, ingredient.name)
+          if (ingredientProduct) {
+            difficulty += calculateRecursive(ingredientProduct) * ingredient.count
+          }
+        }
+        // 아이템은 난이도 0이므로 무시
+      })
+      
+      return difficulty
+    }
+    
+    return calculateRecursive(product)
+  }
+
   // 각 목표 가공품의 재료 계산
   targetProducts.forEach(({ product, quantity }) => {
     calculateIngredients(product, quantity)
@@ -95,12 +155,27 @@ export function calculateMultipleRequirements(productList) {
       (intermediateProducts[product.name] || 0) + quantity
   })
 
+  // 각 가공품의 난이도 계산
+  const productDifficulties = {}
+  uniqueChains.forEach(product => {
+    productDifficulties[product.name] = calculateProductDifficulty(product)
+  })
+  
+  // 목표 가공품의 난이도도 계산
+  targetProducts.forEach(({ product }) => {
+    if (!productDifficulties[product.name]) {
+      productDifficulties[product.name] = calculateProductDifficulty(product)
+    }
+  })
+
   return {
     targetProducts: targetProducts.map(({ name, quantity }) => ({ name, quantity })),
     crops: crops,
+    items: items,
     intermediateProducts: intermediateProducts,
     buildingGroups: buildingGroups,
-    dependencyChain: uniqueChains
+    dependencyChain: uniqueChains,
+    productDifficulties: productDifficulties
   }
 }
 
@@ -114,16 +189,29 @@ export function formatResult(result) {
     return result
   }
 
-  const formattedCrops = Object.entries(result.crops).map(([name, count]) => ({
+  const formattedCrops = Object.entries(result.crops || {}).map(([name, count]) => ({
     name,
-    count: Math.ceil(count)
+    count: Math.ceil(count),
+    difficulty: getCropDifficulty(name)
   }))
 
-  const formattedProducts = Object.entries(result.intermediateProducts)
-    .map(([name, count]) => ({
-      name,
-      count: Math.ceil(count)
-    }))
+  const formattedItems = Object.entries(result.items || {}).map(([name, count]) => ({
+    name,
+    count: Math.ceil(count),
+    difficulty: 0 // 아이템은 항상 난이도 0
+  }))
+
+  const formattedProducts = Object.entries(result.intermediateProducts || {})
+    .map(([name, count]) => {
+      const product = findProduct(getAllProducts(), name)
+      return {
+        name,
+        count: Math.ceil(count),
+        difficulty: result.productDifficulties?.[name] || 0,
+        purchasable: product?.purchasable || false,
+        price: product?.price || null
+      }
+    })
     .sort((a, b) => {
       // 의존성 순서대로 정렬 (간단한 휴리스틱)
       const aIndex = result.dependencyChain.findIndex(p => p.name === a.name)
@@ -131,7 +219,7 @@ export function formatResult(result) {
       return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex)
     })
 
-  const formattedBuildings = Object.entries(result.buildingGroups).map(([building, products]) => ({
+  const formattedBuildings = Object.entries(result.buildingGroups || {}).map(([building, products]) => ({
     building,
     products: products.map(p => p.name)
   }))
@@ -139,6 +227,7 @@ export function formatResult(result) {
   return {
     ...result,
     formattedCrops,
+    formattedItems,
     formattedProducts,
     formattedBuildings
   }

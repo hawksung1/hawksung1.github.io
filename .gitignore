@@ -4,6 +4,8 @@ package-lock.json
 
 # Build output
 dist/
+playwright-report/
+test-results/
 .DS_Store
 
 # Editor directories and files

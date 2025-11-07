@@ -1,12 +1,23 @@
 const { defineConfig } = require('@vue/cli-service')
+const os = require('os')
 
 module.exports = defineConfig({
-  transpileDependencies: true,
+  transpileDependencies: [],
+  productionSourceMap: false,
+  parallel: os.cpus().length > 1,
   publicPath: process.env.NODE_ENV === 'production'
     ? '/'  // 사용자 페이지 (username.github.io)는 루트 경로 사용
     : '/',
   outputDir: 'dist',
   assetsDir: 'static',
+  configureWebpack: {
+    cache: {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename]
+      }
+    }
+  },
   devServer: {
     hot: true,
     liveReload: true,

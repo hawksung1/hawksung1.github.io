@@ -19,6 +19,16 @@
         />
       </div>
       
+      <!-- 작물 목록 탭 -->
+      <div v-if="currentTab === 'crops'" class="tab-content">
+        <CropList @data-changed="handleDataChanged" />
+      </div>
+      
+      <!-- 아이템 목록 탭 -->
+      <div v-if="currentTab === 'items'" class="tab-content">
+        <ItemList @data-changed="handleDataChanged" />
+      </div>
+      
       <!-- 데이터 관리 탭 -->
       <div v-if="currentTab === 'data'" class="tab-content">
         <DataManagement @data-changed="handleDataChanged" />
@@ -31,6 +41,8 @@
 import SearchForm from './components/SearchForm.vue'
 import ResultDisplay from './components/ResultDisplay.vue'
 import ProductList from './components/ProductList.vue'
+import CropList from './components/CropList.vue'
+import ItemList from './components/ItemList.vue'
 import Navigation from './components/Navigation.vue'
 import DataManagement from './components/DataManagement.vue'
 import { calculateRequirements, calculateMultipleRequirements, formatResult } from './utils/calculator.js'
@@ -41,6 +53,8 @@ export default {
     SearchForm,
     ResultDisplay,
     ProductList,
+    CropList,
+    ItemList,
     Navigation,
     DataManagement
   },
@@ -64,10 +78,10 @@ export default {
       )
       
       // Ctrl/Cmd + 숫자 키로 탭 이동
-      if ((event.ctrlKey || event.metaKey) && event.key >= '1' && event.key <= '3') {
+      if ((event.ctrlKey || event.metaKey) && event.key >= '1' && event.key <= '5') {
         event.preventDefault()
         const tabIndex = parseInt(event.key) - 1
-        const tabs = ['search', 'list', 'data']
+        const tabs = ['search', 'list', 'crops', 'items', 'data']
         if (tabs[tabIndex]) {
           this.switchTab(tabs[tabIndex])
         }
@@ -75,10 +89,10 @@ export default {
       }
       
       // 입력 필드에 포커스가 없을 때만 숫자 키로 탭 이동
-      if (!isInputFocused && event.key >= '1' && event.key <= '3' && !event.ctrlKey && !event.metaKey && !event.altKey && !event.shiftKey) {
+      if (!isInputFocused && event.key >= '1' && event.key <= '5' && !event.ctrlKey && !event.metaKey && !event.altKey && !event.shiftKey) {
         event.preventDefault()
         const tabIndex = parseInt(event.key) - 1
-        const tabs = ['search', 'list', 'data']
+        const tabs = ['search', 'list', 'crops', 'items', 'data']
         if (tabs[tabIndex]) {
           this.switchTab(tabs[tabIndex])
         }
@@ -132,6 +146,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -139,9 +155,12 @@ export default {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
+  background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 30%, #FFF9C4 60%, #FFE0B2 100%);
   min-height: 100vh;
+  background-attachment: fixed;
+  color: #3E4A2F;
+  letter-spacing: 0.01em;
 }
 
 #app {
@@ -152,20 +171,56 @@ body {
 
 header {
   text-align: center;
-  color: white;
+  color: #558B2F;
   margin-bottom: 30px;
 }
 
 header h1 {
   font-size: 2.5em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  background: linear-gradient(135deg, #66BB6A 0%, #81C784 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Jua', 'Gowun Dodum', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: none;
 }
 
 main {
-  background: white;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(85, 139, 47, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(129, 199, 132, 0.3);
+}
+
+h2, h3, h4 {
+  font-family: 'Jua', 'Gowun Dodum', sans-serif;
+  color: #4C6F2C;
+  letter-spacing: 0.05em;
+}
+
+button,
+.nav-item,
+.search-btn,
+.add-product-btn,
+.remove-btn {
+  font-family: 'Jua', 'Gowun Dodum', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+input,
+textarea,
+select {
+  font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.tab-content {
+  font-family: 'Gowun Dodum', 'Noto Sans KR', sans-serif;
 }
 </style>
 

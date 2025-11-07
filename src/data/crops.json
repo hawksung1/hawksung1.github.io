@@ -1,0 +1,281 @@
+{
+  "crops": [
+    {
+      "name": "벼",
+      "difficulty": 1
+    },
+    {
+      "name": "찰벼",
+      "difficulty": 1
+    },
+    {
+      "name": "흑미벼",
+      "difficulty": 1
+    },
+    {
+      "name": "보리",
+      "difficulty": 1
+    },
+    {
+      "name": "참깨",
+      "difficulty": 1
+    },
+    {
+      "name": "들깨",
+      "difficulty": 1
+    },
+    {
+      "name": "대두",
+      "difficulty": 1
+    },
+    {
+      "name": "사탕수수",
+      "difficulty": 1
+    },
+    {
+      "name": "고추",
+      "difficulty": 1
+    },
+    {
+      "name": "밀",
+      "difficulty": 1
+    },
+    {
+      "name": "옥수수",
+      "difficulty": 1
+    },
+    {
+      "name": "메밀",
+      "difficulty": 1
+    },
+    {
+      "name": "응고제",
+      "difficulty": 1
+    },
+    {
+      "name": "소금",
+      "difficulty": 1
+    },
+    {
+      "name": "팥",
+      "difficulty": 1
+    },
+    {
+      "name": "천둥호박",
+      "difficulty": 1
+    },
+    {
+      "name": "고구마",
+      "difficulty": 1
+    },
+    {
+      "name": "무",
+      "difficulty": 1
+    },
+    {
+      "name": "토마토",
+      "difficulty": 1
+    },
+    {
+      "name": "파인애플",
+      "difficulty": 1
+    },
+    {
+      "name": "포도",
+      "difficulty": 1
+    },
+    {
+      "name": "애플망고",
+      "difficulty": 1
+    },
+    {
+      "name": "개똥쑥",
+      "difficulty": 1
+    },
+    {
+      "name": "양배추",
+      "difficulty": 1
+    },
+    {
+      "name": "당근",
+      "difficulty": 1
+    },
+    {
+      "name": "배",
+      "difficulty": 1
+    },
+    {
+      "name": "도라지",
+      "difficulty": 1
+    },
+    {
+      "name": "여주",
+      "difficulty": 1
+    },
+    {
+      "name": "삼채",
+      "difficulty": 1
+    },
+    {
+      "name": "브로콜리",
+      "difficulty": 1
+    },
+    {
+      "name": "콜라비",
+      "difficulty": 1
+    },
+    {
+      "name": "가시오가피",
+      "difficulty": 1
+    },
+    {
+      "name": "상황버섯",
+      "difficulty": 1
+    },
+    {
+      "name": "차가버섯",
+      "difficulty": 1
+    },
+    {
+      "name": "노루궁뎅이버섯",
+      "difficulty": 1
+    },
+    {
+      "name": "사과",
+      "difficulty": 1
+    },
+    {
+      "name": "이스트",
+      "difficulty": 1
+    },
+    {
+      "name": "달걀",
+      "difficulty": 1
+    },
+    {
+      "name": "겨자",
+      "difficulty": 1
+    },
+    {
+      "name": "양파",
+      "difficulty": 1
+    },
+    {
+      "name": "배추",
+      "difficulty": 1
+    },
+    {
+      "name": "미나리",
+      "difficulty": 1
+    },
+    {
+      "name": "오이",
+      "difficulty": 1
+    },
+    {
+      "name": "파",
+      "difficulty": 1
+    },
+    {
+      "name": "생강",
+      "difficulty": 1
+    },
+    {
+      "name": "닥나무",
+      "difficulty": 1
+    },
+    {
+      "name": "모시풀",
+      "difficulty": 1
+    },
+    {
+      "name": "목화",
+      "difficulty": 1
+    },
+    {
+      "name": "뽕잎",
+      "difficulty": 1
+    },
+    {
+      "name": "솔",
+      "difficulty": 1
+    },
+    {
+      "name": "더덕",
+      "difficulty": 1
+    },
+    {
+      "name": "참외",
+      "difficulty": 1
+    },
+    {
+      "name": "장미",
+      "difficulty": 1
+    },
+    {
+      "name": "인삼",
+      "difficulty": 1
+    },
+    {
+      "name": "로즈마리",
+      "difficulty": 1
+    },
+    {
+      "name": "캐모마일",
+      "difficulty": 1
+    },
+    {
+      "name": "페퍼민트",
+      "difficulty": 1
+    },
+    {
+      "name": "딸기",
+      "difficulty": 1
+    },
+    {
+      "name": "감귤",
+      "difficulty": 1
+    },
+    {
+      "name": "땅콩",
+      "difficulty": 1
+    },
+    {
+      "name": "파프리카",
+      "difficulty": 1
+    },
+    {
+      "name": "복숭아",
+      "difficulty": 1
+    },
+    {
+      "name": "박하",
+      "difficulty": 1
+    },
+    {
+      "name": "커피",
+      "difficulty": 1
+    },
+    {
+      "name": "우유",
+      "difficulty": 1
+    },
+    {
+      "name": "알로에",
+      "difficulty": 1
+    },
+    {
+      "name": "수박",
+      "difficulty": 1
+    },
+    {
+      "name": "애호박",
+      "difficulty": 1
+    },
+    {
+      "name": "발효액",
+      "difficulty": 1
+    }
+  ]
+}
+
