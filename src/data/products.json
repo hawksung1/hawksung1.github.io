@@ -211,7 +211,7 @@
       "ingredients": [
         { "type": "product", "name": "메밀가루", "count": 1 },
         { "type": "product", "name": "참기름", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -220,7 +220,7 @@
       "building": "떡집",
       "ingredients": [
         { "type": "product", "name": "찹쌀가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -230,7 +230,7 @@
       "ingredients": [
         { "type": "product", "name": "찹쌀가루", "count": 1 },
         { "type": "crop", "name": "팥", "count": 30 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -250,7 +250,7 @@
       "ingredients": [
         { "type": "product", "name": "찹쌀가루", "count": 1 },
         { "type": "product", "name": "설탕", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -261,7 +261,7 @@
         { "type": "product", "name": "찹쌀가루", "count": 1 },
         { "type": "crop", "name": "개똥쑥", "count": 30 },
         { "type": "product", "name": "참기름", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -272,7 +272,7 @@
         { "type": "product", "name": "찹쌀가루", "count": 1 },
         { "type": "product", "name": "콩가루", "count": 1 },
         { "type": "product", "name": "설탕", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -419,7 +419,7 @@
       "ingredients": [
         { "type": "crop", "name": "사과", "count": 30 },
         { "type": "product", "name": "설탕", "count": 1 },
-        { "type": "crop", "name": "이스트", "count": 5 }
+        { "type": "item", "name": "이스트", "count": 5 }
       ]
     },
     {
@@ -429,7 +429,7 @@
       "ingredients": [
         { "type": "product", "name": "식초", "count": 1 },
         { "type": "crop", "name": "달걀", "count": 5 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -461,7 +461,7 @@
       "ingredients": [
         { "type": "crop", "name": "배추", "count": 30 },
         { "type": "product", "name": "고춧가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -472,7 +472,7 @@
         { "type": "crop", "name": "무", "count": 30 },
         { "type": "crop", "name": "배", "count": 30 },
         { "type": "crop", "name": "생강", "count": 30 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -483,7 +483,7 @@
         { "type": "crop", "name": "무", "count": 30 },
         { "type": "crop", "name": "미나리", "count": 30 },
         { "type": "product", "name": "고춧가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -494,7 +494,7 @@
         { "type": "crop", "name": "오이", "count": 30 },
         { "type": "crop", "name": "양파", "count": 30 },
         { "type": "product", "name": "고춧가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -505,7 +505,7 @@
         { "type": "crop", "name": "파", "count": 30 },
         { "type": "product", "name": "고춧가루", "count": 1 },
         { "type": "product", "name": "설탕", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -613,7 +613,7 @@
       "building": "제면소",
       "ingredients": [
         { "type": "product", "name": "밀가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -622,7 +622,7 @@
       "building": "제면소",
       "ingredients": [
         { "type": "product", "name": "쌀가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -632,7 +632,7 @@
       "ingredients": [
         { "type": "product", "name": "메밀가루", "count": 1 },
         { "type": "product", "name": "밀가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -642,7 +642,7 @@
       "ingredients": [
         { "type": "product", "name": "밀가루", "count": 1 },
         { "type": "product", "name": "식용유", "count": 2 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -652,7 +652,7 @@
       "ingredients": [
         { "type": "product", "name": "밀가루", "count": 1 },
         { "type": "product", "name": "식초", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -663,7 +663,7 @@
         { "type": "crop", "name": "오이", "count": 30 },
         { "type": "product", "name": "설탕", "count": 1 },
         { "type": "product", "name": "식초", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -674,7 +674,7 @@
         { "type": "product", "name": "두부", "count": 2 },
         { "type": "product", "name": "설탕", "count": 1 },
         { "type": "product", "name": "식초", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -770,7 +770,7 @@
       "building": "잼제조장",
       "ingredients": [
         { "type": "crop", "name": "땅콩", "count": 30 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -923,7 +923,7 @@
       "building": "장집",
       "ingredients": [
         { "type": "crop", "name": "대두", "count": 30 },
-        { "type": "crop", "name": "소금", "count": 5 },
+        { "type": "item", "name": "소금", "count": 5 },
         { "type": "crop", "name": "발효액", "count": 5 }
       ]
     },
@@ -934,7 +934,7 @@
       "ingredients": [
         { "type": "crop", "name": "대두", "count": 30 },
         { "type": "product", "name": "밀가루", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     },
     {
@@ -945,7 +945,7 @@
         { "type": "product", "name": "찹쌀가루", "count": 1 },
         { "type": "product", "name": "고춧가루", "count": 1 },
         { "type": "product", "name": "엿기름", "count": 1 },
-        { "type": "crop", "name": "소금", "count": 5 }
+        { "type": "item", "name": "소금", "count": 5 }
       ]
     }
   ]
